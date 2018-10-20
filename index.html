@@ -37,14 +37,17 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 	<script>
 		$(document).ready(function(){
-			$.getJSON("http://iot-tul-dashboard-data.azurewebsites.net/?fbclid=IwAR0AkcqUJRbEvDB7btBgB-KVwGqGPjFtnadnmj9229RSXHEBUz2zz3ajqOo",function(data){
+			$.ajax(,function(data){
+				url:"http://iot-tul-dashboard-data.azurewebsites.net/?fbclid=IwAR0AkcqUJRbEvDB7btBgB-KVwGqGPjFtnadnmj9229RSXHEBUz2zz3ajqOo",
+				dataType:"json",
+				sucess:function(data){
 					$(data).each(function(index,value){
 						var record="<tr><td>"+value.idMeas+"</td><td>"+
 						value.idSensor+"</td><td>"+value.dateMeas+
 						"</td><td>"+value.valueMeas+"</td></tr>";
 						$("table").append(record);
 					});		
-				
+				}
 			});
 		});
 	
