@@ -16,10 +16,10 @@
 		<div class="table-responsive">
 		<table class="table table-bordered table-striped" id="table">
 				<tr>
-				  <th>idMeas</th>
-				  <th>idSensor</th>
-				  <th>dateMeas</th>
-				  <th>valueMeas</th>
+				  <th>ID</th>
+				  <th>SensorId</th>
+				  <th>Description</th>
+				  <th>Value</th>
 				</tr>
 		</table>
 		</div>
@@ -37,13 +37,13 @@
 	<script>
 		$(document).ready(function(){
 			$.ajax({
-				url:"sample2.json",
+				url:"sample.json",
 				dataType:"json",
 				success:function(data){
 					$(data.users).each(function(index,value){
-						var record="<tr><td>"+value.idMeas+"</td><td>"+
-						value.idSensor+"</td><td>"+value.dateMeas+
-						"</td><td>"+value.valueMeas+"</td></tr>";
+						var record="<tr><td>"+value.ID+"</td><td>"+
+						value.SensorId+"</td><td>"+value.Description+
+						"</td><td>"+value.Value+"</td></tr>";
 						$("table").append(record);
 					});		
 				}
