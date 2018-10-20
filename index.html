@@ -40,7 +40,7 @@
 			$.ajax({
 				url:"sample.json",
 				dataType:"json",
-				sucess:function(data){
+				success:function(data){
 					$(data).each(function(index,value){
 						var record="<tr><td>"+value.idMeas+"</td><td>"+
 						value.idSensor+"</td><td>"+value.dateMeas+
