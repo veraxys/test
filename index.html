@@ -54,7 +54,7 @@
 				url:"sample.json",
 				dataType:"json",
 				success:function(data){
-					$(data.users).each(function(index,value){
+					$(data.users).each(function(value){
 						var record="<tr><td>"+value.ID+"</td><td>"+
 						value.SensorId+"</td><td>"+value.Description+
 						"</td><td>"+value.Value+"</td></tr>";
