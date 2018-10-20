@@ -38,8 +38,7 @@
 	<script>
 		$(document).ready(function(){
 			$.ajax({
-				url:"https://iot-tul-dashboard-data.azurewebsites.net/?fbclid=IwAR0AkcqUJRbEvDB7btBgB-KVwGqGPjFtnadnmj9229RSXHEBUz2zz3ajqOo",
-				dataType:"json",
+				url:"sample.json",
 				success:function(data){
 					$(data).each(function(index,value){
 						var record="<tr><td>"+value.idMeas+"</td><td>"+
