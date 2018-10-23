@@ -69,6 +69,7 @@
     <script>
         function the_function()
         {
+        }
         $(".refreshBtn").click(function() {
                     console.log("START: refreshBtn");
     //   location.hash = "parameter1=123&parameter2=abc";
@@ -76,10 +77,8 @@
             var _sensorId =  document.getElementById("select_sensorId").value;
             var _sensorType =  document.getElementById("select_sensorType").value;
             var param = "https://iot-tul-app-sqltojson.azurewebsites.net/?sensorId="+_sensorId+"&sensorType="+_sensorType;
-                    // console.log("LINK: "+param);
-                    console.log("SHORT: "+
-                    "?sensorId="+_sensorId+"&sensorType="+_sensorType
-                    );
+                    console.log("LINK: "+param);
+                    console.log("SHORT: "+"?sensorId="+_sensorId+"&sensorType="+_sensorType);
             $.support.cors = true;
             $.ajax({
                 url: param,
@@ -88,7 +87,7 @@
                 dataType: "json",
                 success: function (data) {
                     // console.log("Downloading and parsing json...");
-                    console.log("START parsing json...");
+                    //console.log("START parsing json...");
                     $(data).each(function (index, value) {
                         var record = "<tr><td>" + value.idMeas + "</td><td>" +
                             value.idSensor + "</td><td>" + value.dateMeas +
@@ -96,14 +95,14 @@
                             "</td></tr>";
                         $("table").append(record);
                     });
-                    console.log("STOP parsing json...");
+                    //console.log("STOP parsing json...");
                 }
             });
-            console.log("Done!");
+            //console.log("Done!");
         });
-                    console.log("STOP: refreshBtn");
+                    //console.log("STOP: refreshBtn");
 });
-        }
+        
     </script>
 </body>
 
